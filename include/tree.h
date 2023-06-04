@@ -7,11 +7,10 @@
 
 class Tree {
  private:
-
   struct Node {
     char value;
     std::vector<Node*> children;
-};
+  };
 
   Node* root = nullptr;
   std::vector<char> permutation;
@@ -21,7 +20,8 @@ class Tree {
       child->value = element;
       node->children.push_back(child);
       std::vector<char> remaining = elements;
-      remaining.erase(std::remove(remaining.begin(), remaining.end(), element), remaining.end());
+      remaining.erase(std::remove(remaining.begin(),
+                                  remaining.end(), element), remaining.end());
       buildPermutationTree(remaining, child);
     }
   }
@@ -37,6 +37,7 @@ class Tree {
       permutation.pop_back();
     }
   }
+
  public:
   std::vector<std::vector<char>> permutations;
   Tree(std::vector<char> elements) {
