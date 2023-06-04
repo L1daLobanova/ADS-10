@@ -39,7 +39,7 @@ class Tree {
   }
 
  public:
-  std::vector<std::vector<char>> permutations;
+  explicit std::vector<std::vector<char>> permutations;
   Tree(std::vector<char> elements) {
     root = new Node;
     root->value = 0;
